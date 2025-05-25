@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carolina & Carlos - Nuestra Boda</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f9f6f2;
+      color: #333;
+    }
+    header {
+      background-color: #eae0d5;
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 2px solid #ccc;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    nav button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #d5bdaf;
+      border: none;
+      border-radius: 4px;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .hidden { display: none; }
+    form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #bfa48b;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Carolina & Carlos</h1>
+    <p id="date">8 de noviembre de 2025 - Palma de Mallorca</p>
+    <nav>
+      <button onclick="setLanguage('es')">Español</button>
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('de')">Deutsch</button>
+    </nav>
+  </header>
+
+  <section id="welcome">
+    <div data-lang="es">
+      <h2>Bienvenidos a nuestra boda</h2>
+      <p>Estamos encantados de celebrar este día tan especial con vosotros.</p>
+    </div>
+    <div data-lang="en" class="hidden">
+      <h2>Welcome to our wedding</h2>
+      <p>We are thrilled to celebrate this special day with you.</p>
+    </div>
+    <div data-lang="de" class="hidden">
+      <h2>Willkommen zu unserer Hochzeit</h2>
+      <p>Wir freuen uns sehr, diesen besonderen Tag mit euch zu feiern.</p>
+    </div>
+  </section>
+
+  <section id="ceremony">
+    <div data-lang="es">
+      <h2>Ceremonia y celebración</h2>
+      <p>La ceremonia tendrá lugar en Palma de Mallorca a las 17:00.</p>
+    </div>
+    <div data-lang="en" class="hidden">
+      <h2>Ceremony and Celebration</h2>
+      <p>The ceremony will take place in Palma de Mallorca at 5:00 PM.</p>
+    </div>
+    <div data-lang="de" class="hidden">
+      <h2>Zeremonie und Feier</h2>
+      <p>Die Zeremonie findet in Palma de Mallorca um 17:00 Uhr statt.</p>
+    </div>
+  </section>
+
+  <section id="rsvp">
+    <div data-lang="es">
+      <h2>Confirmación de asistencia</h2>
+      <form>
+        <label for="name">Nombre completo</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="attendance">¿Asistirás a la boda?</label>
+        <select id="attendance" name="attendance" required>
+          <option value="yes">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="bus">¿Necesitas servicio de autobús?</label>
+        <select id="bus" name="bus" required>
+          <option value="yes">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div data-lang="en" class="hidden">
+      <h2>RSVP</h2>
+      <form>
+        <label for="name-en">Full Name</label>
+        <input type="text" id="name-en" name="name-en" required>
+
+        <label for="email-en">Email</label>
+        <input type="email" id="email-en" name="email-en" required>
+
+        <label for="attendance-en">Will you attend the wedding?</label>
+        <select id="attendance-en" name="attendance-en" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="bus-en">Do you need bus service?</label>
+        <select id="bus-en" name="bus-en" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div data-lang="de" class="hidden">
+      <h2>Rückmeldung (RSVP)</h2>
+      <form>
+        <label for="name-de">Vollständiger Name</label>
+        <input type="text" id="name-de" name="name-de" required>
+
+        <label for="email-de">E-Mail</label>
+        <input type="email" id="email-de" name="email-de" required>
+
+        <label for="attendance-de">Wirst du zur Hochzeit kommen?</label>
+        <select id="attendance-de" name="attendance-de" required>
+          <option value="yes">Ja</option>
+          <option value="no">Nein</option>
+        </select>
+
+        <label for="bus-de">Benötigst du einen Bustransfer?</label>
+        <select id="bus-de" name="bus-de" required>
+          <option value="yes">Ja</option>
+          <option value="no">Nein</option>
+        </select>
+
+        <button type="submit">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.add('hidden');
+        if (el.getAttribute('data-lang') === lang) {
+          el.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
