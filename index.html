@@ -1,206 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carolina & Carlos - Nuestra Boda</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
+  <title>Carolina y Carlos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
     }
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #f9f6f2;
-      color: #333;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a, nav button {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .lang-switch {
-      display: flex;
-      gap: 0.5rem;
-    }
-    section {
-      padding: 6rem 2rem 3rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .hidden { display: none; }
-    h2 {
-      font-size: 2rem;
-      margin-top: 0;
-      text-align: center;
-    }
-    form label {
-      display: block;
-      margin: 1rem 0 0.5rem;
-      font-weight: bold;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #bfa48b;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
+    window.onload = () => setLanguage('es');
+  </script>
 </head>
 <body>
-  <header>
-    <h1><a href="#welcome" style="text-decoration: none; color: #333;">Carolina & Carlos</a></h1>
-    <nav>
-      <a href="#welcome">Inicio</a>
-      <a href="#ceremony">Ceremonia</a>
+  <!-- Aquí comienza el contenido real -->
+  <header class="main-header">
+    <div class="logo">Carolina & Carlos</div>
+    <nav class="main-nav">
+      <a href="#bienvenida">Inicio</a>
+      <a href="#ceremonia">Ceremonia</a>
+      <a href="#alojamiento">Alojamiento</a>
+      <a href="#actividades">Qué hacer</a>
       <a href="#rsvp">RSVP</a>
-      <a href="#accommodation">Alojamiento</a>
-      <a href="#things-to-do">Qué hacer</a>
-      <div class="lang-switch">
+      <span class="lang-switch">
         <button onclick="setLanguage('es')">ES</button>
         <button onclick="setLanguage('en')">EN</button>
         <button onclick="setLanguage('de')">DE</button>
-      </div>
+      </span>
     </nav>
   </header>
 
-  <section id="welcome">
-    <div data-lang="es">
-      <h2>Bienvenidos a nuestra boda</h2>
-      <p style="text-align: center;">Estamos encantados de celebrar este día tan especial con vosotros. 8 de noviembre de 2025 - Palma de Mallorca.</p>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Carolina & Carlos</h1>
+      <p>8 de Noviembre 2025 - Palma de Mallorca</p>
     </div>
-    <div data-lang="en" class="hidden">
-      <h2>Welcome to our wedding</h2>
-      <p style="text-align: center;">We are thrilled to celebrate this special day with you. November 8, 2025 - Palma de Mallorca.</p>
-    </div>
-    <div data-lang="de" class="hidden">
-      <h2>Willkommen zu unserer Hochzeit</h2>
-      <p style="text-align: center;">Wir freuen uns sehr, diesen besonderen Tag mit euch zu feiern. 8. November 2025 - Palma de Mallorca.</p>
-    </div>
-  </section>
+  </div>
 
-  <section id="ceremony">
-    <div data-lang="es">
-      <h2>Ceremonia y celebración</h2>
-      <p style="text-align: center;">La ceremonia tendrá lugar en Palma de Mallorca a las 17:00.</p>
-    </div>
-    <div data-lang="en" class="hidden">
-      <h2>Ceremony and Celebration</h2>
-      <p style="text-align: center;">The ceremony will take place in Palma de Mallorca at 5:00 PM.</p>
-    </div>
-    <div data-lang="de" class="hidden">
-      <h2>Zeremonie und Feier</h2>
-      <p style="text-align: center;">Die Zeremonie findet in Palma de Mallorca um 17:00 Uhr statt.</p>
-    </div>
-  </section>
+  <main>
+    <section id="bienvenida" class="section">
+      <div data-lang="es">
+        <h2>Bienvenidos</h2>
+        <p>Nos hace muchísima ilusión compartir este día tan especial con vosotros. Esta web contiene toda la información útil para que podáis acompañarnos y disfrutar al máximo.</p>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2>Welcome</h2>
+        <p>We are thrilled to share this very special day with you. This website contains all the information you'll need to join us and make the most of the celebration.</p>
+      </div>
+      <div data-lang="de" class="hidden">
+        <h2>Willkommen</h2>
+        <p>Wir freuen uns sehr, diesen besonderen Tag mit euch zu teilen. Diese Website enthält alle wichtigen Informationen, damit ihr mit uns feiern könnt.</p>
+      </div>
+    </section>
 
-  <section id="rsvp">
-    <div data-lang="es">
-      <h2>Confirmación de asistencia</h2>
-      <form>
-        <label for="name">Nombre completo</label>
-        <input type="text" id="name" name="name" required>
+    <section id="ceremonia" class="section">
+      <div data-lang="es">
+        <h2>La Ceremonia</h2>
+        <p>La ceremonia tendrá lugar el sábado 8 de noviembre de 2025 en Palma de Mallorca, a las 17:00 horas. El lugar exacto y más detalles se compartirán próximamente.</p>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2>The Ceremony</h2>
+        <p>The ceremony will take place on Saturday, November 8, 2025, in Palma de Mallorca at 5:00 PM. We will share the exact location and more details soon.</p>
+      </div>
+      <div data-lang="de" class="hidden">
+        <h2>Die Zeremonie</h2>
+        <p>Die Zeremonie findet am Samstag, den 8. November 2025, in Palma de Mallorca um 17:00 Uhr statt. Weitere Informationen folgen in Kürze.</p>
+      </div>
+    </section>
 
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required>
+    <section id="alojamiento" class="section">
+      <div data-lang="es">
+        <h2>Alojamiento</h2>
+        <p>Recomendamos alojarse en el centro de Palma para estar cerca de todo. Compartiremos hoteles sugeridos y descuentos especiales próximamente.</p>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2>Accommodation</h2>
+        <p>We recommend staying in central Palma to be close to everything. We will share suggested hotels and special discounts soon.</p>
+      </div>
+      <div data-lang="de" class="hidden">
+        <h2>Unterkunft</h2>
+        <p>Wir empfehlen, im Zentrum von Palma zu übernachten, um in der Nähe von allem zu sein. Bald folgen Hotelempfehlungen und Rabatte.</p>
+      </div>
+    </section>
 
-        <label for="attendance">¿Asistirás a la boda?</label>
-        <select id="attendance" name="attendance" required>
-          <option value="yes">Sí</option>
-          <option value="no">No</option>
-        </select>
+    <section id="actividades" class="section">
+      <div data-lang="es">
+        <h2>Qué hacer en Palma</h2>
+        <p>Palma es una ciudad mágica con una gran oferta cultural y gastronómica. Os recomendaremos restaurantes, playas y rincones favoritos muy pronto.</p>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2>Things to Do in Palma</h2>
+        <p>Palma is a magical city full of cultural and culinary attractions. We will soon share our favorite restaurants, beaches, and hidden gems.</p>
+      </div>
+      <div data-lang="de" class="hidden">
+        <h2>Was man in Palma tun kann</h2>
+        <p>Palma ist eine zauberhafte Stadt mit vielen kulturellen und kulinarischen Angeboten. Unsere Lieblingsorte und Empfehlungen folgen bald.</p>
+      </div>
+    </section>
 
-        <label for="bus">¿Necesitas servicio de autobús?</label>
-        <select id="bus" name="bus" required>
-          <option value="yes">Sí</option>
-          <option value="no">No</option>
-        </select>
+    <section id="rsvp" class="section">
+      <div data-lang="es">
+        <h2>RSVP</h2>
+        <p>Por favor, confirma tu asistencia antes del 15 de septiembre de 2025. Incluiremos aquí un formulario para facilitar la respuesta.</p>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2>RSVP</h2>
+        <p>Please confirm your attendance before September 15, 2025. We will include a form here to make it easy to respond.</p>
+      </div>
+      <div data-lang="de" class="hidden">
+        <h2>RSVP</h2>
+        <p>Bitte bestätigt eure Teilnahme bis zum 15. September 2025. Ein Formular zur Bestätigung wird hier bald verfügbar sein.</p>
+      </div>
+    </section>
+  </main>
 
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-    <div data-lang="en" class="hidden">
-      <h2>RSVP</h2>
-      <form>
-        <label for="name-en">Full Name</label>
-        <input type="text" id="name-en" name="name-en" required>
-
-        <label for="email-en">Email</label>
-        <input type="email" id="email-en" name="email-en" required>
-
-        <label for="attendance-en">Will you attend the wedding?</label>
-        <select id="attendance-en" name="attendance-en" required>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-
-        <label for="bus-en">Do you need bus service?</label>
-        <select id="bus-en" name="bus-en" required>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <div data-lang="de" class="hidden">
-      <h2>Rückmeldung (RSVP)</h2>
-      <form>
-        <label for="name-de">Vollständiger Name</label>
-        <input type="text" id="name-de" name="name-de" required>
-
-        <label for="email-de">E-Mail</label>
-        <input type="email" id="email-de" name="email-de" required>
-
-        <label for="attendance-de">Wirst du zur Hochzeit kommen?</label>
-        <select id="attendance-de" name="attendance-de" required>
-          <option value="yes">Ja</option>
-          <option value="no">Nein</option>
-        </select>
-
-        <label for="bus-de">Benötigst du einen Bustransfer?</label>
-        <select id="bus-de" name="bus-de" required>
-          <option value="yes">Ja</option>
-          <option value="no">Nein</option>
-        </select>
-
-        <button type="submit">Absenden</button>
-      </form>
-    </div>
-  </section>
-
-<!-- Sección Alojamiento y Qué hacer en Palma se mantiene aquí -->
+  <footer class="main-footer">
+    <p>Con cariño, Carolina & Carlos · 2025</p>
+  </footer>
+</body>
+</html>
